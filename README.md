@@ -1,6 +1,6 @@
 # spaceBattle
 
-## Per Scholas - Week 4 - CSS&JS Concepts - MODULE 1 Project: Space Battle
+## Per Scholas - Week 7 - CSS&JS Concepts - Project: Space Battle
 
 ### Build a game of battling alien spaceships using Javascript, HTML, and CSS.
 
