@@ -1,0 +1,221 @@
+/*set global variables (css custom properties) */
+:root {
+  --primary-dark: #323232;
+  --primary-light: #ede1d1;
+  --secondary-dark: #525e75;
+  --secondary-light: #fefefe;
+  --burgandy: #a82727;
+  --black: #000000;
+  --white: #ffffff;
+}
+
+/* hide overflow of rotating background */
+body {
+  overflow: hidden;
+}
+
+/* background */
+.space {
+    background: rgba(128, 0, 128, 0.1) center / 200px 200px round;
+    border: 1px dashed purple;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.stars1 {
+    animation: space 180s ease-in-out infinite;
+    background-image:
+      radial-gradient(
+        1px 1px at 25px 5px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        1px 1px at 50px 25px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        1px 1px at 125px 20px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        1.5px 1.5px at 50px 75px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        2px 2px at 15px 125px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        2.5px 2.5px at 110px 80px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      );
+}
+
+.stars2 {
+    animation: space 240s ease-in-out infinite;
+    background-image:
+      radial-gradient(
+        1px 1px at 75px 125px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        1px 1px at 100px 75px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        1.5px 1.5px at 199px 100px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        2px 2px at 20px 50px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        2.5px 2.5px at 100px 5px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        2.5px 2.5px at 5px 5px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      );
+}
+
+.stars3 {
+    animation: space 300s ease-in-out infinite;
+    background-image:
+      radial-gradient(
+        1px 1px at 10px 10px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        1px 1px at 150px 150px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        1.5px 1.5px at 60px 170px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        1.5px 1.5px at 175px 180px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        2px 2px at 195px 95px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        2.5px 2.5px at 95px 145px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      );
+}
+
+/* make background rotate */
+@keyframes space {
+    40% {
+      opacity: 0.75;
+    }
+    50% {
+      opacity: 0.25;
+    }
+    60% {
+      opacity: 0.75;
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+/*main body*/
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3em;
+  margin-bottom: 2em;
+  max-width: 100vw;
+  padding: 2em;
+  position: relative;
+}
+
+#welcomeMessage {
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  white-space: pre-wrap;
+  color: var(--white);
+}
+
+/* button */
+a, a:visited {
+  text-decoration: none;
+}
+
+#startBtn {
+  background-color: var(--white);
+  border: 3px solid var(--black);
+  color: var(--burgandy);
+  cursor: pointer;
+  font-size: clamp(1.25em, 1.5vw, 2em);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.5rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 300px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: 0.2s ease-in-out;
+}
+
+#startBtn:hover {
+  box-shadow: 5px 5px 8px var(--burgandy);
+}
+
+/* audio controls */
+audio {
+  position: relative;
+  z-index: 1;
+}
+/* change color of audio controls for webkit browsers */
+audio::-webkit-media-controls-panel {
+  background-color: rgba(128, 0, 128, 0.5);
+}
+/* change color of audio controls for FireFox */
+@-moz-document url-prefix() {
+  audio {
+    background-color: rgba(128, 0, 128, 1);
+  }
+}
+
+/* media queries */
+@media (max-width: 850px) {
+  #footer > p {
+    display: none;
+  }
+}
