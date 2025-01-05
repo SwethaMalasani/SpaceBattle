@@ -111,11 +111,6 @@ button:hover {
     font-size: 24px;
     transition: transform 0.3s ease-in-out;
 }
-  
-.fa-github:hover, .fa-linkedin:hover {
-    transform: rotateY(360deg) scale(1.4);
-    color: var(--burgandy);
-}
 
 .fa-heart:hover {
     transform: scale(1.3);
